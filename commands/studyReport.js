@@ -25,10 +25,15 @@ const handle = async (client, interaction) => {
       `自習レポートの取得に失敗しました。\nたぶんバグなので関口に連絡ください..`
     );
   }
+
   let message = "今日の自習レポートです！";
   const studyHours = parseInt(res.studyMinutes / 60);
   const studyMinutes = parseInt(res.studyMinutes % 60);
   message += `\n今日の合計作業時間: ${studyHours}時間 ${studyMinutes} 分`;
+
+  if (res.achievedLevel) {
+    message += `\n\n報酬レベル${res.achievedLevel[0]}(合計作業時間${res.achievedLevel[1]}時間以上)をクリアしました！\n達成クエストを追加しましょう！\nhttps://www.notion.so/5fc3166a6b6d4ffaadc45d0617014503`;
+  }
 
   return discord.responseInteraction(client, interaction, message);
 };
