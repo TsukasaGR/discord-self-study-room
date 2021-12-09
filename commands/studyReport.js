@@ -8,7 +8,7 @@ const handle = async (client, interaction) => {
     return discord.responseInteraction(
       client,
       interaction,
-      `Whoops...\nバグってるので関口まで連絡ください...`
+      `Whoops...\nバグってるので${ADMIN_USER_NAME}まで連絡ください...`
     );
   });
   if (res.status === "error") {
@@ -22,7 +22,7 @@ const handle = async (client, interaction) => {
     return discord.responseInteraction(
       client,
       interaction,
-      `自習レポートの取得に失敗しました。\nたぶんバグなので関口に連絡ください..`
+      `自習レポートの取得に失敗しました。\nたぶんバグなので${ADMIN_USER_NAME}に連絡ください..`
     );
   }
 
@@ -32,7 +32,7 @@ const handle = async (client, interaction) => {
   message += `\n今日の合計作業時間: ${studyHours}時間 ${studyMinutes} 分`;
 
   if (res.achievedLevel) {
-    message += `\n\n報酬レベル${res.achievedLevel[0]}(合計作業時間${res.achievedLevel[1]}時間以上)をクリアしました！\n達成クエストを追加しましょう！\nhttps://www.notion.so/5fc3166a6b6d4ffaadc45d0617014503`;
+    message += `\n\n報酬レベル${res.achievedLevel[0]}(合計作業時間${res.achievedLevel[1]}時間以上)をクリアしました！\n達成クエストを追加しましょう！\n${process.env.QUEST_PAGE_URL}`;
   }
 
   return discord.responseInteraction(client, interaction, message);

@@ -16,7 +16,7 @@ const handle = async (client, interaction) => {
       return discord.responseInteraction(
         client,
         interaction,
-        `Whoops...\nバグってるので関口まで連絡ください...`
+        `Whoops...\nバグってるので${ADMIN_USER_NAME}まで連絡ください...`
       );
     });
   if (res.status === "error") {
