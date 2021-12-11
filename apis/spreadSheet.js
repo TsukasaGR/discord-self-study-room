@@ -44,10 +44,11 @@ const studyEnd = async (at, userId, userName, ssUrl) => {
   return updateSS(jsonData, ssUrl);
 };
 
-const studyReport = async (userId, ssUrl) => {
+const studyReport = async (userId, userName, ssUrl) => {
   const jsonData = {
     type: "report",
     userId,
+    userName,
   };
   return updateSS(jsonData, ssUrl);
 };
