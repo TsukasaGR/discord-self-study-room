@@ -10,31 +10,13 @@ const handle = async (client, interaction) => {
   const userName = interaction.member.user.username;
   const ssUrl = process.env.SS_URL;
 
-  const res = await spreadSheetApis
-    .studyEnd(at, userId, userName, ssUrl)
-    .catch((e) => {
-      return discord.responseInteraction(
-        client,
-        interaction,
-        `Whoops...\nバグってるので${ADMIN_USER_NAME}まで連絡ください...`
-      );
-    });
-  if (res.status === "error") {
-    if (res.errorType === "UnregisteredUser") {
-      return discord.responseInteraction(
-        client,
-        interaction,
-        `ユーザー登録されていないようです。\n以下スプシの「ユーザーリスト」シートにユーザーを追加してください。\nあなたのDiscord IDは ${userId} です。\n${process.env.SS_URL_SHEET_DB}`
-      );
-    }
-    return discord.responseInteraction(
-      client,
-      interaction,
-      `自習終了に失敗しました。\n自習を開始するか、おかしなレコードがないかスプシを確認してください。\n${process.env.SS_URL_SHEET_DB}`
-    );
-  }
+  spreadSheetApis.studyEnd(at, userId, userName, ssUrl);
 
-  return discord.responseInteraction(client, interaction, `自習終了しました！`);
+  return discord.responseInteraction(
+    client,
+    interaction,
+    `自習終了の処理を受け付けました！`
+  );
 };
 
 exports.handle = handle;

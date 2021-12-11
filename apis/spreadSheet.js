@@ -19,7 +19,7 @@ const updateSS = async (data, ssUrl) => {
       return res;
     })
     .catch((error) => {
-      console.log("ng res: ", error);
+      console.log("error res: ", error);
       throw new Error(error);
     });
 };
