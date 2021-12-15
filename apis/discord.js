@@ -6,12 +6,12 @@ const setCommands = async (client) => {
       description: "自習スタート(Study Start)",
     },
     {
-      name: "se",
-      description: "自習終了(Study End)",
+      name: "sb",
+      description: "自習中断(Study Break)",
     },
     {
-      name: "ser",
-      description: "自習終了(Study End) & 自習レポート(Report)",
+      name: "se",
+      description: "自習終了(Study End)",
     },
     {
       name: "sr",
