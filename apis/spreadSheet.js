@@ -36,7 +36,7 @@ const studyStart = async (at, userId, userName, ssUrl) => {
 
 const studyEnd = async (at, userId, userName, ssUrl, type) => {
   const jsonData = {
-    type: command,
+    type: type,
     at,
     userId,
     userName,
