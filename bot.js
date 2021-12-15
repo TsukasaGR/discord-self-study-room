@@ -20,7 +20,8 @@ client.once("ready", async () => {
     if (command === "ss") {
       return studyStart.handle(client, interaction);
     } else if (command === "se" || command === "ser") {
-      return studyEnd.handle(client, interaction, command);
+      const type = command === "se" ? "end" : "endAndReport";
+      return studyEnd.handle(client, interaction, type);
     } else if (command === "sr") {
       return studyReport.handle(client, interaction);
     }

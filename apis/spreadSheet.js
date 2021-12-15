@@ -34,7 +34,7 @@ const studyStart = async (at, userId, userName, ssUrl) => {
   return updateSS(jsonData, ssUrl);
 };
 
-const studyEnd = async (at, userId, userName, ssUrl, command) => {
+const studyEnd = async (at, userId, userName, ssUrl, type) => {
   const jsonData = {
     type: command,
     at,
