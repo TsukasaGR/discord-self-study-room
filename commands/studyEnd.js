@@ -16,8 +16,8 @@ const handle = async (client, interaction, type) => {
     client,
     interaction,
     type === "end"
-      ? `自習終了の処理を受け付けました！`
-      : `自習終了&レポートの処理を受け付けました！`
+      ? `自習中断の処理を受け付けました！`
+      : `自習終了の処理を受け付けました！`
   );
 };
 
