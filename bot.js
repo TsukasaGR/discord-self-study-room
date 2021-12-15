@@ -19,8 +19,8 @@ client.once("ready", async () => {
     const command = interaction.data.name.toLowerCase();
     if (command === "ss") {
       return studyStart.handle(client, interaction);
-    } else if (command === "se") {
-      return studyEnd.handle(client, interaction);
+    } else if (command === "se" || command === "ser") {
+      return studyEnd.handle(client, interaction, command);
     } else if (command === "sr") {
       return studyReport.handle(client, interaction);
     }

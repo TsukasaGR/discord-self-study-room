@@ -1,4 +1,4 @@
-const handle = async (client, interaction) => {
+const handle = async (client, interaction, command) => {
   const spreadSheetApis = require("../apis/spreadSheet.js");
   const discord = require("../apis/discord.js");
   const dayjs = require("dayjs");
@@ -10,12 +10,14 @@ const handle = async (client, interaction) => {
   const userName = interaction.member.user.username;
   const ssUrl = process.env.SS_URL;
 
-  spreadSheetApis.studyEnd(at, userId, userName, ssUrl);
+  spreadSheetApis.studyEnd(at, userId, userName, ssUrl, command);
 
   return discord.responseInteraction(
     client,
     interaction,
-    `自習終了の処理を受け付けました！`
+    command === "se"
+      ? `自習終了の処理を受け付けました！`
+      : `自習終了&レポートの処理を受け付けました！`
   );
 };
 

@@ -10,6 +10,10 @@ const setCommands = async (client) => {
       description: "自習終了(Study End)",
     },
     {
+      name: "ser",
+      description: "自習終了(Study End) & 自習レポート(Report)",
+    },
+    {
       name: "sr",
       description: "当日の合計作業時間レポート(Study Report)",
     },
