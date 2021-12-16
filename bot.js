@@ -6,6 +6,7 @@ const discordApi = require("./apis/discord.js");
 const studyStart = require("./commands/studyStart.js");
 const studyEnd = require("./commands/studyEnd.js");
 const studyReport = require("./commands/studyReport.js");
+const studyInformation = require("./commands/studyInformation.js");
 
 // ログイン時イベント
 client.once("ready", async () => {
@@ -24,6 +25,8 @@ client.once("ready", async () => {
       return studyEnd.handle(client, interaction, type);
     } else if (command === "sr") {
       return studyReport.handle(client, interaction);
+    } else if (command === "si") {
+      return studyInformation.handle(client, interaction);
     }
   });
 });

@@ -17,6 +17,10 @@ const setCommands = async (client) => {
       name: "sr",
       description: "当日の作業時間(計)レポート(Study Report)",
     },
+    {
+      name: "si",
+      description: "自習室関連の情報確認(Study Information)",
+    },
   ];
   await client.commands.set(data, process.env.SERVER_ID);
 };
